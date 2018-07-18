@@ -11,7 +11,7 @@ namespace AetheriumTests
         const float EPSILON = 0.00000001f;
 
         [TestMethod]
-        public void TestLaserShooting()
+        public void Test()
         {
             Hull h = new Hull(100);
             var largeSlot = new WeaponSlot(WeaponSlotType.Large);
@@ -36,7 +36,7 @@ namespace AetheriumTests
             Assert.AreEqual(0, weaponsSystem.ChargeComponents());
 
             weaponsSystem.PowerLevel = 8;
-            Assert.AreEqual(7.5f, weaponsSystem.ChargeComponents(), EPSILON);
+            Assert.AreEqual(.075f, weaponsSystem.ChargeComponents(), EPSILON);
 
             
         }

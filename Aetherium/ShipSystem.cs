@@ -2,6 +2,11 @@
 
 namespace Aetherium
 {
+    /// <summary>
+    /// A container for multiple ship components, and their power needs.
+    /// Is responsible for making sure that components are deactivated if less than the minimum amount of power is provided.
+    /// Also is responsbile for making sure that components are not provided with more than their maximum amount of power.
+    /// </summary>
     public class ShipSystem
     {
         float powerLevel;
@@ -25,7 +30,8 @@ namespace Aetherium
             }
         }
 
-        public bool Active => powerLevel >= MinPowerConsumption;
+        public bool Active { get; set; }
+        public bool EnoughPower => PowerLevel >= MinPowerConsumption;
 
         public float MinPowerConsumption { get; private set; }
 
@@ -81,26 +87,51 @@ namespace Aetherium
         }
 
         /// <summary>
-        /// Charge all of the Components in the system, given the input energy.
+        /// Charge all of the Components in the system, using PowerLevel as the amount of input energy.
         /// </summary>
         /// <returns>The amount of energy used</returns>
         public float ChargeComponents()
         {
-            if (!Active) return 0;
+            const float DELTA_TIME = .01f;
+
+            if (!Active || !EnoughPower) return 0;
+            float inputPower = PowerLevel * DELTA_TIME;
 
             // Parametric variable from 0 - 1. 0 for min power, 1 for max power.
             float productionRatio = (PowerLevel - MinPowerConsumption) / (MaxPowerConsumption - MinPowerConsumption);
-            float inputPower = PowerLevel;
+            float powerRemaining = inputPower;
+            foreach (var component in Components)
+            {
+                component.ComputePowerConsumption(out float componentMin, out float componentMax);
+                float powerToComponent = productionRatio * (componentMax - componentMin) + componentMin;
+                powerToComponent *= DELTA_TIME;
+                powerRemaining -= component.Charge(powerToComponent);
+            }
+
+            // Don't count leftover power as used.
+            return inputPower - powerRemaining;
+        }
+
+        /// <summary>
+        /// Charge the system with any extra power leftover after the first pass of ChareComponents() across all ShipSystems
+        /// PowerLevel should NOT be changed between ChargeComponents() and a call to this method.
+        /// </summary>
+        /// <param name="power">The amount of extra power to be passed to the system.</param>
+        /// <returns></returns>
+        public float ChargeComponentsWithLeftoverPower(float power)
+        {
+            // Even though this if leftover power, if the default power setting isn't enough to activate the component,
+            // don't activate it now. We don't want components sporadically coming to life when there is enough leftover power for them.
+            // TODO: Do we?
+            if (!Active || !EnoughPower) return 0;
+            float productionRatio = (PowerLevel - MinPowerConsumption) / (MaxPowerConsumption - MinPowerConsumption);
 
             foreach (var component in Components)
             {
                 component.ComputePowerConsumption(out float componentMin, out float componentMax);
                 float powerToComponent = productionRatio * (componentMax - componentMin) + componentMin;
-                inputPower -= component.Charge(powerToComponent);
+                float roomLeftForPower = componentMax - powerToComponent;
             }
-
-            // If for some reason there is leftover power, we don't want to count it as used.
-            return PowerLevel - inputPower;
         }
     }
 }

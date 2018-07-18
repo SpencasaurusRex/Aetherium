@@ -9,7 +9,7 @@ namespace Aetherium.Weapons
         readonly float hardwareMinWaitTime;
         readonly float shotPowerUsage;
         readonly float powerBufferSize;
-
+        
         // Count upwards as time passes
         float powerBuffer;
         float hardwareWaitTime;
