@@ -13,8 +13,8 @@ namespace Aetherium.Weapons
         // Count upwards as time passes
         float currentWaitTime;
 
-        public Laser(WeaponSlotType slotType, float maxFireRate, MinMax powerUsage, float powerUsagePerShot,
-            float powerBufferSize) : base(slotType, maxFireRate, powerUsage, powerBufferSize)
+        public Laser(WeaponSlotType slotType, float maxFireWaitTime, MinMax powerUsage, float powerUsagePerShot,
+            float powerBufferSize) : base(slotType, maxFireWaitTime, powerUsage, powerBufferSize)
         {
             this.slotType = slotType;
             this.powerUsagePerShot = powerUsagePerShot;
@@ -22,8 +22,7 @@ namespace Aetherium.Weapons
 
         public override void Update()
         {
-            const float DELTA_TIME = 0.01f;
-            currentWaitTime += DELTA_TIME;
+            currentWaitTime += Time.fixedDeltaTime;
         }
 
         public override bool CanFire

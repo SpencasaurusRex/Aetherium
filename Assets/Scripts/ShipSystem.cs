@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Aetherium
 {
@@ -98,19 +99,22 @@ namespace Aetherium
         /// <returns>The amount of energy used</returns>
         public float ChargeComponents()
         {
-            const float DELTA_TIME = .01f;
-
             if (!Active || !EnoughPower) return 0;
-            float inputPower = PowerLevel * DELTA_TIME;
+            float inputPower = PowerLevel * Time.fixedDeltaTime;
 
-            // Parametric variable from 0 - 1. 0 for min leftoverPower, 1 for max leftoverPower.
-            float productionRatio = (PowerLevel - MinPowerConsumption) / (MaxPowerConsumption - MinPowerConsumption);
+            // Parametric variable from 0 - 1. 0 for min, 1 for max.
+            float productionRatio = 0;
+            if (MaxPowerConsumption != MinPowerConsumption)
+            {
+                productionRatio = (PowerLevel - MinPowerConsumption) / (MaxPowerConsumption - MinPowerConsumption);
+            }
+
             float powerRemaining = inputPower;
             foreach (var component in Components)
             {
                 MinMax power = component.PowerConsumption;
                 float powerToComponent = productionRatio * (power.Max - power.Min) + power.Min;
-                powerToComponent *= DELTA_TIME;
+                powerToComponent *= Time.fixedDeltaTime;
                 powerRemaining -= component.Charge(powerToComponent);
             }
 
@@ -119,10 +123,10 @@ namespace Aetherium
         }
 
         /// <summary>
-        /// Charge the system with any extra leftoverPower leftover after the first pass of ChareComponents() across all ShipSystems
+        /// Charge the system with any extra power leftover after the first pass of ChareComponents() across all ShipSystems
         /// PowerLevel should NOT be changed between ChargeComponents() and a call to this method.
         /// </summary>
-        /// <param name="leftoverPower">The amount of extra leftoverPower to be passed to the system.</param>
+        /// <param name="leftoverPower">The amount of extra power to be passed to the system.</param>
         /// <returns></returns>
         // TODO: Maybe this is something we will want in the future.
         //public float ChargeComponentsWithLeftoverPower(float leftoverPower)

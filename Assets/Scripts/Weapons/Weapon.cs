@@ -10,11 +10,11 @@ namespace Aetherium.Weapons
         public abstract void Fire();
         public readonly float MaxFireWaitTime;
 
-        protected Weapon(WeaponSlotType slotType, float maxFireRate, MinMax powerConsumption, float powerBufferSize)
+        protected Weapon(WeaponSlotType slotType, float maxFireWaitTime, MinMax powerConsumption, float powerBufferSize)
             : base(powerConsumption, powerBufferSize)
         {
             SlotType = slotType;
-            MaxFireWaitTime = 1f / maxFireRate;
+            MaxFireWaitTime = maxFireWaitTime;
         }
     }
 }
