@@ -21,10 +21,16 @@ namespace Aetherium
                 return currentHealth;
             }
 
-            private set => currentHealth = value;
+            private set
+            {
+                currentHealth = value;
+            }
         }
 
-        public bool IsDead => currentHealth <= 0;
+        public bool IsDead
+        {
+            get { return currentHealth <= 0; }
+        }
 
         public Hull(float maxHealth)
         {

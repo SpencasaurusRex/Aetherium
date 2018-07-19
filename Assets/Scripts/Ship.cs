@@ -2,12 +2,12 @@
 
 namespace Aetherium
 {
-
     public class Ship
     {
         public readonly Hull Hull;
         public readonly WeaponSlot[] WeaponSlots;
         public readonly List<ShipSystem> Systems;
+        public readonly Engine engine;
 
         public Ship(Hull hull, WeaponSlot[] weaponSlots)
         {
@@ -23,6 +23,14 @@ namespace Aetherium
                 weaponsSystem.AddComponent(slot.Weapon);
             }
             Systems.Add(weaponsSystem);
+        }
+
+        public void Update()
+        {
+            foreach (var System in Systems)
+            {
+                System.ChargeComponents();
+            }
         }
     }
 }

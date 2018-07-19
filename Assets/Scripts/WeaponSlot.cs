@@ -1,4 +1,6 @@
-﻿namespace Aetherium
+﻿using Aetherium.Weapons;
+
+namespace Aetherium
 {
     public enum WeaponSlotType
     {
