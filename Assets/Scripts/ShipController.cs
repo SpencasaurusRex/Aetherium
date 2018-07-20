@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
@@ -32,7 +30,6 @@ public class ShipController : MonoBehaviour
         Vector2 forceAmount = targetVelocity - currentVelocity;
         Vector2 force = forceAmount * acceleration;
         rb.AddForce(force);
-        Debug.Log("Target vel: " + targetVelocity + " Current vel: " + rb.velocity + " Force amount: " + forceAmount);
 
         // Turning
         float targetTurn = -Input.GetAxis("Horizontal") * turningSpeed;
@@ -40,6 +37,5 @@ public class ShipController : MonoBehaviour
         float turnAmount = targetTurn - currentTurning;
         float torque = turnAmount * turningAcceleration;
         rb.AddTorque(torque);
-        Debug.Log("Target avel: " + targetTurn + " Current avel: " + rb.angularVelocity + " Torque: " + torque);
     }
 }

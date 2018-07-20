@@ -1,13 +1,19 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Aetherium
 {
-    public class Ship
+    public class Ship : MonoBehaviour
     {
-        public readonly Hull Hull;
-        public readonly WeaponSlot[] WeaponSlots;
-        public readonly List<ShipSystem> Systems;
-        public readonly Engine engine;
+        public Hull Hull { get; private set; }
+        public WeaponSlot[] WeaponSlots { get; private set; }
+        public List<ShipSystem> Systems { get; private set; }
+        public Engine Engine { get; private set; }
+
+        public Ship()
+        {
+
+        }
 
         public Ship(Hull hull, WeaponSlot[] weaponSlots)
         {
@@ -25,11 +31,16 @@ namespace Aetherium
             Systems.Add(weaponsSystem);
         }
 
-        public void Update()
+        public override void Awake()
         {
-            foreach (var System in Systems)
+
+        }
+
+        public override void Update()
+        {
+            foreach (var system in Systems)
             {
-                System.ChargeComponents();
+                system.ChargeComponents();
             }
         }
     }
