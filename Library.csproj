@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{619BB13B-3A7B-4D43-9B31-5C5D701E1695}</ProjectGuid>
+    <ProjectGuid>{6124592B-C900-4345-9881-923C7D0E7E2C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Library</RootNamespace>
@@ -40,54 +40,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DamageType.cs" />
-    <Compile Include="Assets\Scripts\Engines\Engine.cs" />
-    <Compile Include="Assets\Scripts\Engines\PropulsionEngine.cs" />
-    <Compile Include="Assets\Scripts\Follow.cs" />
-    <Compile Include="Assets\Scripts\Hull.cs" />
-    <Compile Include="Assets\Scripts\MinMax.cs" />
-    <Compile Include="Assets\Scripts\PowerBuffer.cs" />
-    <Compile Include="Assets\Scripts\Ship.cs" />
-    <Compile Include="Assets\Scripts\ShipComponent.cs" />
-    <Compile Include="Assets\Scripts\ShipComponentInitializer.cs" />
-    <Compile Include="Assets\Scripts\ShipController.cs" />
-    <Compile Include="Assets\Scripts\ShipSystem.cs" />
-    <Compile Include="Assets\Scripts\ShipSystemInitializer.cs" />
-    <Compile Include="Assets\Scripts\WeaponSlot.cs" />
-    <Compile Include="Assets\Scripts\Weapons\Laser.cs" />
-    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\DamageType.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Engines\Engine.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Engines\PropulsionEngine.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Follow.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Hull.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\MinMax.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\PowerBuffer.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Ship.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\ShipComponent.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\ShipComponentInitializer.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\ShipController.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\ShipSystem.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\ShipSystemInitializer.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\WeaponSlot.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Weapons\Laser.cs" />
+    <Compile Include="AetheriumUnity\Assets\Scripts\Weapons\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\DamageType.cs.meta" />
-    <None Include="Assets\Scripts\Engines.meta" />
-    <None Include="Assets\Scripts\Engines\Engine.cs.meta" />
-    <None Include="Assets\Scripts\Engines\PropulsionEngine.cs.meta" />
-    <None Include="Assets\Scripts\Follow.cs.meta" />
-    <None Include="Assets\Scripts\Hull.cs.meta" />
-    <None Include="Assets\Scripts\MinMax.cs.meta" />
-    <None Include="Assets\Scripts\PowerBuffer.cs.meta" />
-    <None Include="Assets\Scripts\Ship.cs.meta" />
-    <None Include="Assets\Scripts\ShipComponent.cs.meta" />
-    <None Include="Assets\Scripts\ShipComponentInitializer.cs.meta" />
-    <None Include="Assets\Scripts\ShipController.cs.meta" />
-    <None Include="Assets\Scripts\ShipSystem.cs.meta" />
-    <None Include="Assets\Scripts\ShipSystemInitializer.cs.meta" />
-    <None Include="Assets\Scripts\Weapons.meta" />
-    <None Include="Assets\Scripts\WeaponSlot.cs.meta" />
-    <None Include="Assets\Scripts\WeaponsSystem.asset" />
-    <None Include="Assets\Scripts\WeaponsSystem.asset.meta" />
-    <None Include="Assets\Scripts\Weapons\Laser.cs.meta" />
-    <None Include="Assets\Scripts\Weapons\Weapon.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\DamageType.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Engines.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Engines\Engine.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Engines\PropulsionEngine.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Follow.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Hull.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\MinMax.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\PowerBuffer.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Ship.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\ShipComponent.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\ShipComponentInitializer.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\ShipController.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\ShipSystem.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\ShipSystemInitializer.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Tests.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Weapons.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\WeaponSlot.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\WeaponsSystem.asset" />
+    <None Include="AetheriumUnity\Assets\Scripts\WeaponsSystem.asset.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Weapons\Laser.cs.meta" />
+    <None Include="AetheriumUnity\Assets\Scripts\Weapons\Weapon.cs.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AetheriumUnity\Assets\Scripts\Tests\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="MockEngine\MockEngine.csproj">
       <Project>{c9c4ef87-fb0d-45e2-9e48-60f92ef033d7}</Project>
       <Name>MockEngine</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Scripts\Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

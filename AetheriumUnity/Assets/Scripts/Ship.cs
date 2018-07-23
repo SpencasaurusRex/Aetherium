@@ -5,7 +5,7 @@ namespace Aetherium
 {
     public class Ship : MonoBehaviour
     {
-        public ShipSystemInitializer[] SystemInitializers;
+        public ScriptableObject[] SystemInitializers;
         public List<ShipSystem> Systems { get; private set; }
 
         void Awake()
@@ -13,7 +13,8 @@ namespace Aetherium
             Systems = new List<ShipSystem>();
             foreach (var systemInitializer in SystemInitializers)
             {
-                Systems.Add(systemInitializer.CreateShipSystem());
+                var ShipSystem = (systemInitializer as ShipSystemInitializer).CreateShipSystem();
+                Systems.Add(ShipSystem);
             }
         }
 

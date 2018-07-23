@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Spencer\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_Aetherium.1933001796.00" t="ExcludeRecursive" />
+    <e p="M:\Dev\Projects\Aetherium" t="IncludeRecursive">
+      <e p="Aetherium.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="DamageType.cs" t="Include" />
+          <e p="Engines" t="Include">
+            <e p="Engine.cs" t="Include" />
+            <e p="PropulsionEngine.cs" t="Include" />
+          </e>
+          <e p="Follow.cs" t="Include" />
+          <e p="Hull.cs" t="Include" />
+          <e p="MinMax.cs" t="Include" />
+          <e p="PowerBuffer.cs" t="Include" />
+          <e p="Ship.cs" t="Include" />
+          <e p="ShipComponent.cs" t="Include" />
+          <e p="ShipComponentInitializer.cs" t="Include" />
+          <e p="ShipController.cs" t="Include" />
+          <e p="ShipSystem.cs" t="Include" />
+          <e p="ShipSystemInitializer.cs" t="Include" />
+          <e p="Weapons" t="Include">
+            <e p="Laser.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+          </e>
+          <e p="WeaponSlot.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Designer" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Designer.csproj" t="IncludeRecursive" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="MockEngine" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Debug.cs" t="Include" />
+        <e p="GameEngine.cs" t="Include" />
+        <e p="GameObject.cs" t="Include" />
+        <e p="Input.cs" t="Include" />
+        <e p="Mathf.cs" t="Include" />
+        <e p="MockEngine.csproj" t="IncludeRecursive" />
+        <e p="MonoBehaviour.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Rigidbody2D.cs" t="Include" />
+        <e p="Scene.cs" t="Include" />
+        <e p="TIme.cs" t="Include" />
+        <e p="Transform.cs" t="Include" />
+        <e p="Vector2.cs" t="Include" />
+        <e p="Vector3.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="MSTest.TestAdapter.1.2.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+        <e p="MSTest.TestAdapter.1.2.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+        <e p="MSTest.TestAdapter.1.2.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Tests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Tests.csproj" t="IncludeRecursive" />
+        <e p="UnitTests.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

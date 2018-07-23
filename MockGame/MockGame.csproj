@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.csproj">
+      <Project>{6124592b-c900-4345-9881-923c7d0e7e2c}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MockEngine\MockEngine.csproj">
       <Project>{c9c4ef87-fb0d-45e2-9e48-60f92ef033d7}</Project>
       <Name>MockEngine</Name>
