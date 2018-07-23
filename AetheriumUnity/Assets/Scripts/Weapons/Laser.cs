@@ -6,11 +6,11 @@ namespace Aetherium.Weapons
     [CreateAssetMenu(menuName = "Weapons/Laser")]
     public class LaserInitializer : ScriptableObject, ShipComponentInitializer
     {
-        WeaponSlotType SlotType;
-        MinMax PowerUsage;
-        float FireWaitTime;
-        float PowerUsagePerShot;
-        float PowerBufferSize;
+        public WeaponSlotType SlotType;
+        public MinMax PowerUsage;
+        public float FireWaitTime;
+        public float PowerUsagePerShot;
+        public float PowerBufferSize;
         
         public ShipComponent CreateShipComponent()
         {

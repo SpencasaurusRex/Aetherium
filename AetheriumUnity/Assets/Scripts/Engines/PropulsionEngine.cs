@@ -13,20 +13,21 @@ namespace Aetherium.Engines
 
         public ShipComponent CreateShipComponent()
         {
-            return new PropulsionEngine(ForcePerEnergy, ManeuverabilityPerEngine, MaxEnergyUse, PowerConsumption, PowerBufferSize);
+            return new PropulsionEngine(ForcePerEnergy, ManeuverabilityPerEngine, MaxEnergyUse, PowerConsumption,
+                PowerBufferSize);
         }
     }
 
     public class PropulsionEngine : Engine
     {
-        public PropulsionEngine(float forcePerEnergy, float maneuverabilityPerEnergy, float maxEnergyUse, MinMax powerConsumption, float powerBufferSize)
+        public PropulsionEngine(float forcePerEnergy, float maneuverabilityPerEnergy, float maxEnergyUse,
+            MinMax powerConsumption, float powerBufferSize)
             : base(forcePerEnergy, maneuverabilityPerEnergy, maxEnergyUse, powerConsumption, powerBufferSize)
         {
         }
 
         public override void Update()
         {
-            
         }
 
         public override bool CanFire

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.Remoting.Messaging;
-
-namespace Aetherium
+﻿namespace Aetherium
 {
     public class Hull
     {

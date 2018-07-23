@@ -5,20 +5,22 @@ namespace Aetherium
 {
     public class Ship : MonoBehaviour
     {
-        public ScriptableObject[] SystemInitializers;
-        public List<ShipSystem> Systems { get; private set; }
+        public ShipInitializer Initializer;
+        public List<ShipSystem> Systems;
+        public PowerBuffer Battery { get; private set; }
 
-        void Awake()
+        void Start()
         {
-            Systems = new List<ShipSystem>();
-            foreach (var systemInitializer in SystemInitializers)
-            {
-                var ShipSystem = (systemInitializer as ShipSystemInitializer).CreateShipSystem();
-                Systems.Add(ShipSystem);
-            }
+            Initialize();
         }
 
-        public void Update()
+        public void Initialize()
+        {
+            Battery = new PowerBuffer(Initializer.PowerBufferSize, Initializer.PowerBufferSize);
+            Systems = Initializer.CreateSystems();
+        }
+
+        void FixedUpdate()
         {
             foreach (var system in Systems)
             {

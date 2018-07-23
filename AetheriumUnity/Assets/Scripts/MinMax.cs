@@ -1,9 +1,12 @@
-﻿namespace Aetherium
+﻿using System;
+
+namespace Aetherium
 {
+    [Serializable]
     public struct MinMax
     {
-        public readonly float Min;
-        public readonly float Max;
+        public float Min;
+        public float Max;
 
         public MinMax(float min, float max)
         {

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d0c1e6c5862914aad561d25f743313, type: 3}
+  m_Name: StartingShip
+  m_EditorClassIdentifier: 
+  SystemIntializers:
+  - {fileID: 11400000, guid: fa82ee8f6c9e0084ba4a6458d5d85f6a, type: 2}
+  - {fileID: 11400000, guid: 4b65823a4eff07749ace4e212c1eac3d, type: 2}
+  PowerBufferSize: 30

@@ -6,7 +6,7 @@ namespace Aetherium
     /// <summary>
     /// A container for multiple ship components, and their leftoverPower needs.
     /// Is responsible for making sure that components are deactivated if less than the minimum amount of leftoverPower is provided.
-    /// Also is responsbile for making sure that components are not provided with more than their maximum amount of leftoverPower.
+    /// Also is responsbile for making sure that components are not provided with more than their maximum amount of power.
     /// </summary>
     public class ShipSystem
     {
@@ -118,7 +118,7 @@ namespace Aetherium
                 powerRemaining -= component.Charge(powerToComponent);
             }
 
-            // Don't count leftover leftoverPower as used.
+            // Don't count leftover power as used.
             return inputPower - powerRemaining;
         }
 
@@ -131,8 +131,8 @@ namespace Aetherium
         // TODO: Maybe this is something we will want in the future.
         //public float ChargeComponentsWithLeftoverPower(float leftoverPower)
         //{
-        //    // Even though this if leftover leftoverPower, if the default leftoverPower setting isn't enough to activate the component,
-        //    // don't activate it now. We don't want components sporadically coming to life when there is enough leftover leftoverPower for them.
+        //    // Even though this is leftover power, if the default power setting isn't enough to activate the component,
+        //    // don't activate it now. We don't want components sporadically coming to life when there is enough leftover power for them.
         //    // TODO: Do we?
         //    if (!Active || !EnoughPower) return 0;
         //    float productionRatio = (PowerLevel - MinPowerConsumption) / (MaxPowerConsumption - MinPowerConsumption);
