@@ -1,7 +1,4 @@
-﻿using Aetherium;
-using UnityEngine;
-
-namespace Aetherium
+﻿namespace Aetherium
 {
     public abstract class Engine : ShipComponent
     {
@@ -15,13 +12,13 @@ namespace Aetherium
         public readonly float ManeuverabilityPerEnergy;
         public readonly float MaxEnergyUse;
 
-        protected Engine(float forcePerEnergy, float maneuverabilityPerEnergy, float maxEnergyUse, MinMax powerConsumption, float powerBufferSize)
+        protected Engine(float forcePerEnergy, float maneuverabilityPerEnergy, 
+            float maxEnergyUse, MinMax powerConsumption, float powerBufferSize)
             : base(powerConsumption, powerBufferSize)
         {
             ForcePerEnergy = forcePerEnergy;
             ManeuverabilityPerEnergy = maneuverabilityPerEnergy;
             MaxEnergyUse = maxEnergyUse;
         }
-
     }
 }

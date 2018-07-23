@@ -3,6 +3,21 @@ using UnityEngine;
 
 namespace Aetherium.Weapons
 {
+    [CreateAssetMenu(menuName = "Weapons/Laser")]
+    public class LaserInitializer : ScriptableObject, ShipComponentInitializer
+    {
+        WeaponSlotType SlotType;
+        MinMax PowerUsage;
+        float FireWaitTime;
+        float PowerUsagePerShot;
+        float PowerBufferSize;
+        
+        public ShipComponent CreateShipComponent()
+        {
+            return new Laser(SlotType, FireWaitTime, PowerUsage, PowerUsagePerShot, PowerBufferSize);
+        }
+    }
+    
     public class Laser : Weapon
     {
         readonly WeaponSlotType slotType;
